@@ -11,7 +11,7 @@ import resources.testdata.TestData;
 @Listeners(CustomListeners.class)
 public class LoginPageTest extends TestBase {
    LoginPage loginPage;
-
+//
    @BeforeMethod
     public void inIt(){
        loginPage=new LoginPage();
