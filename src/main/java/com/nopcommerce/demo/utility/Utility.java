@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -145,6 +146,10 @@ public class Utility extends ManagerDriver {
         Select select = new Select(element);
         select.selectByVisibleText(text);
 
+    }
+    public void verifyMessage( WebElement element,String expectedMessage, String displayMessage) {
+        String actualMessage = getTextFromElement(element);
+        Assert.assertEquals(actualMessage, expectedMessage, displayMessage);
     }
 
 

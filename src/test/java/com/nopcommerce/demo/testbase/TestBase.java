@@ -9,12 +9,12 @@ public class TestBase extends Utility {
 
     String browser = PropertyReader.getInstance().getProperty("browser");
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod(groups = {"smoke","sanity","regression","compregression"},alwaysRun = true)
     public void setUp(){
         selectBrowser(browser);
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"smoke","sanity","regression","compregression"},alwaysRun = true)
     public void tearDown(){
         closeBrowser();
     }
